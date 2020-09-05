@@ -217,11 +217,11 @@ e.g. for gfx/foo.bin {identifier} will be foo_bin,
 
   try {
     parser.ParseCLI(argc, argv);
-  } catch (args::Help) {
+  } catch (const args::Help&) {
     std::cout << parser;
     std::cout << extended_description;
     return 0;
-  } catch (args::ParseError e) {
+  } catch (const args::ParseError &e) {
     std::cerr << e.what() << std::endl;
     std::cerr << parser;
     std::cerr << extended_description;
